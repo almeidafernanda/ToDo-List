@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Noto Sans", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url(Images/day.jpg) no-repeat center center/cover;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 0 20px;
+}
+
+.todo-list {
+    width: 100%;
+    max-width:400px;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+    color: rgb(237, 233, 228);
+    border-radius: 20px;
+    box-shadow: 0 0 100px black;
+    border: 2px solid rgb(239, 187, 187);
+    backdrop-filter: blur(10px);
+}
+
+.todo-list h1 {
+    font-size: 2rem;
+}
+
+.input-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.input-area input {
+    flex: 1;
+    padding: 10px 18px;
+    font-size: 1rem;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    background: #F6D9C5;
+    color:rgb(79, 78, 78);
+}
+
+.input-area button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+    padding: 8px;
+    border-radius: 50%;
+    color: white;
+    font-size: 1.1rem;
+    background: #F6D9C5;
+    border: #F6D9C5;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.input-area button:hover {
+    transform: scale(1.1);
+    background: rgba(238, 193, 145, 0.678);
+    border: 2px solid #F6D9C5;
+}
+
+.todo-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.todo-container > img {
+    padding-right: 20px;
+}
+
+#task-list {
+    width: 100%;
+}
+
+#task-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #F6D9C5;
+    margin-bottom: 10px;
+    padding:8px 10px ;
+    border-radius: 20px;
+    font-size: 1.1rem;
+    color: rgb(79, 78, 78);
+    position: relative;
+    transition: box-shadow 0.2s ease;
+}
+
+#task-list li:hover {
+    box-shadow:0 0 10px rgb(52, 52, 52) ;
+}
+
+#task-list li .checkbox {
+    min-width: 20px;
+    height: 20px;
+    border: 2px solid rgb(176, 4, 98);
+    background: transparent;
+    border-radius: 50%;
+    appearance: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+#task-list li.checkbox:checked {
+    background: rgb(228, 134, 161);
+    transform: scale(1.1);
+}
+
+#task-list li .checkbox:checked::before {
+    content: '\2713';
+    color: rgb(176, 4, 98);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: -1rem;
+}
+
+#task-list li span {
+    flex: 1;
+    margin-left: 10px;
+    word-wrap: break-word;
+}
+
+.task-buttons {
+    display: flex;
+    gap: 10px;
+    margin-right:auto;
+}
+
+.task-buttons button {
+    background: rgba(221, 113, 143, 0.852);
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 0.8rem;
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.task-buttons button:hover {
+    transform: scale(1.2);
+}
+
+.task-buttons .edit-btn {
+    background: rgba(45, 27, 104, 0.881);
+}
+
+.task-buttons .delete-btn {
+    background: rgba(209, 81, 117, 0.852);
+}
+
