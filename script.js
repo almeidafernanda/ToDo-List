@@ -3,9 +3,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const addTaskBtn = document.getElementById('add-task-btn');
     const taskList = document.getElementById('task-list');
     const iconList = document.querySelector('.icon-list');
+    const todoContainer = document.querySelector('.todo-container');
 
     const toggleEmptyState = () => {
         iconList.style.display = taskList.children.length === 0 ? 'block' : 'none';
+        todoContainer.style.width = taskList.children.length > 0 ? '100%' : '50%';
     };
 
 
@@ -21,10 +23,25 @@ document.addEventListener('DOMContentLoaded', () => {
         <input type="checkbox" class="checkbox">
         <span>${taskText}</span>
         <div class="task-buttons">
-            <button class"edit-btn"><i class="fa-solid fa-pen" ></i></button>
-            <button class"delete-btn"><i class="fa-solid fa-trash" ></i></button>
+            <button class="edit-btn"><i class="fa-solid fa-pen" ></i></button>
+            <button class="delete-btn"><i class="fa-solid fa-trash" ></i></button>
         </div>
         `;
+        const checkbox = li.querySelector('.checkbox');
+        const editBtn = li.querySelector('.edit-btn');
+
+        editBtn.addEventListener('click', () => {
+            if(!checkbox.checked) {
+                taskInput.value = li.querySelector('span').textContent;
+                li.remove();
+                toggleEmptyState();
+            }
+        });
+
+        li.querySelector('.delete-btn').addEventListener('click', () => {
+            li.remove();
+            toggleEmptyState();
+        });
 
         taskList.appendChild(li);
         taskInput.value = '';
